@@ -1,46 +1,29 @@
+import Image from "next/image";
 import { cn } from "@/lib/cn";
+
+import logoSrc from "@/public/brand/logo.png";
 
 type Props = {
   className?: string;
-  variant?: "horizontal" | "mark";
 };
 
 /**
- * Brand logo placeholder. Swap the JSX inside this file when the final
- * logo asset arrives — every consumer imports this component, not the asset.
+ * Single source of truth for the brand lockup. Replace `logo.png` (or this
+ * import) to swap the asset everywhere — Header, Footer, future OG images.
+ *
+ * Intentionally exposes no "mark" / "horizontal" variant: we only have the
+ * full lockup. A real icon-only variant should land as a separate asset
+ * (e.g. `logo-mark.png`) and a new component or prop wired to it, not a
+ * scaled-down crop of the lockup.
  */
-export function Logo({ className, variant = "horizontal" }: Props) {
-  if (variant === "mark") {
-    return (
-      <svg
-        viewBox="0 0 32 32"
-        aria-hidden="true"
-        className={cn("h-8 w-8", className)}
-      >
-        <rect x="0" y="0" width="32" height="32" rx="6" fill="#E0001A" />
-        <path
-          d="M9 8h14v4H13v4h8v4h-8v6H9z"
-          fill="#fff"
-        />
-      </svg>
-    );
-  }
-
+export function Logo({ className }: Props) {
   return (
-    <span
-      className={cn(
-        "inline-flex items-center gap-2 font-display font-semibold tracking-tight text-brand-ink",
-        className,
-      )}
-      aria-label="French Tech Copenhagen"
-    >
-      <svg viewBox="0 0 32 32" aria-hidden="true" className="h-7 w-7">
-        <rect x="0" y="0" width="32" height="32" rx="6" fill="#E0001A" />
-        <path d="M9 8h14v4H13v4h8v4h-8v6H9z" fill="#fff" />
-      </svg>
-      <span className="text-base leading-none">
-        French Tech <span className="text-brand-red">Copenhagen</span>
-      </span>
-    </span>
+    <Image
+      src={logoSrc}
+      alt="La French Tech Copenhagen"
+      priority
+      placeholder="blur"
+      className={cn("h-12 w-auto select-none", className)}
+    />
   );
 }
