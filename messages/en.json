@@ -1,0 +1,73 @@
+{
+  "site": {
+    "name": "French Tech Copenhagen",
+    "tagline": "The bridge between the French and Danish tech ecosystems.",
+    "description": "French Tech Copenhagen connects French and Danish founders, investors, talent and partners — events, mentorship, and a soft-landing for French startups in Denmark."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "community": "Community",
+    "startups": "Startups",
+    "members": "Members",
+    "mentors": "Mentors",
+    "events": "Events",
+    "programs": "Programs",
+    "resources": "Resources",
+    "news": "News",
+    "partners": "Partners",
+    "contact": "Contact",
+    "press": "Press"
+  },
+  "home": {
+    "heroEyebrow": "La French Tech · Copenhagen",
+    "heroCtaPrimary": "Join the community",
+    "heroCtaSecondary": "Next event",
+    "statsTitle": "A growing community",
+    "stats": {
+      "members": "members",
+      "startups": "French startups in DK",
+      "events": "events per year",
+      "partners": "partners"
+    },
+    "aboutTitle": "Why we exist",
+    "aboutBody": "French Tech Copenhagen is a volunteer-run community connecting the French and Danish tech ecosystems. We gather founders, operators, investors, mentors and partners to grow opportunities on both sides of the bridge.",
+    "aboutCta": "Read more",
+    "upcomingTitle": "Upcoming events",
+    "upcomingBody": "Breakfasts, panels, founder dinners and bigger conferences — powered by Luma.",
+    "upcomingCta": "See all events",
+    "verticalsTitle": "Focus areas",
+    "verticals": {
+      "climate": {
+        "title": "Climate & Energy",
+        "body": "Wind, hydrogen, energy efficiency, sustainable mobility — France and Denmark share a climate-tech agenda."
+      },
+      "fintech": {
+        "title": "Fintech & Payments",
+        "body": "Open banking, payments, B2B SaaS for finance — a strong French export, a strong Danish appetite."
+      },
+      "health": {
+        "title": "Health & Life Sciences",
+        "body": "Medtech, digital health, biotech — building bridges with Medicon Valley."
+      }
+    },
+    "startupsTitle": "Featured startups",
+    "startupsCta": "Discover all startups",
+    "partnersTitle": "Our partners",
+    "partnersBody": "We work with the French Embassy in Denmark, Business France, the French Chamber of Commerce, and a growing roster of corporate and ecosystem partners.",
+    "partnersCta": "Become a partner",
+    "newsTitle": "Latest news",
+    "newsCta": "All news",
+    "newsletterTitle": "Stay in the loop",
+    "newsletterBody": "Monthly newsletter — events, opportunities, founder stories.",
+    "newsletterCta": "Subscribe"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "tagline": "Built by the community, for the community."
+  },
+  "labels": {
+    "comingSoon": "Coming soon",
+    "placeholder": "Placeholder content — final copy pending."
+  }
+}
