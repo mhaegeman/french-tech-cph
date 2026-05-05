@@ -1,5 +1,9 @@
 import { useTranslations } from "next-intl";
 
+const FORM_URL = process.env.NEXT_PUBLIC_NEWSLETTER_FORM_URL;
+const CONTACT_EMAIL =
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@frenchtechcph.dk";
+
 export function NewsletterCTA() {
   const t = useTranslations("home");
   return (
@@ -14,29 +18,40 @@ export function NewsletterCTA() {
               {t("newsletterBody")}
             </p>
           </div>
-          <form
-            className="flex flex-col gap-2 sm:flex-row"
-            action="/api/newsletter"
-            method="post"
-          >
-            <label htmlFor="newsletter-email" className="sr-only">
-              Email
-            </label>
-            <input
-              id="newsletter-email"
-              type="email"
-              name="email"
-              required
-              placeholder="you@example.com"
-              className="w-full rounded-full border border-white/10 bg-white/10 px-5 py-3 text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="rounded-full bg-brand-red px-5 py-3 text-sm font-semibold text-white hover:bg-red-700"
+          {FORM_URL ? (
+            <form
+              className="flex flex-col gap-2 sm:flex-row"
+              action={FORM_URL}
+              method="post"
             >
-              {t("newsletterCta")}
-            </button>
-          </form>
+              <label htmlFor="newsletter-email" className="sr-only">
+                Email
+              </label>
+              <input
+                id="newsletter-email"
+                type="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+                className="w-full rounded-full border border-white/10 bg-white/10 px-5 py-3 text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="rounded-full bg-brand-red px-5 py-3 text-sm font-semibold text-white hover:bg-red-700"
+              >
+                {t("newsletterCta")}
+              </button>
+            </form>
+          ) : (
+            <div className="flex justify-start md:justify-end">
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Newsletter signup")}`}
+                className="rounded-full bg-brand-red px-5 py-3 text-sm font-semibold text-white hover:bg-red-700"
+              >
+                {t("newsletterCta")} →
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </section>

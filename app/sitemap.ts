@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 
+export const dynamic = "force-static";
+
 const ROUTES = [
   "",
   "/about",
