@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
 import { getPartners } from "@/lib/directories";
 import type { Partner } from "@/lib/directories";
+import { pageAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -11,7 +12,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("partners") };
+  return {
+    title: t("partners"),
+    alternates: pageAlternates(locale, "/partners"),
+  };
 }
 
 const TIERS: { id: Partner["tier"]; label: string; body: string }[] = [

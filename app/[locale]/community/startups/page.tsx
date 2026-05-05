@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
 import { getStartups } from "@/lib/directories";
+import { pageAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -10,7 +11,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("startups") };
+  return {
+    title: t("startups"),
+    alternates: pageAlternates(locale, "/community/startups"),
+  };
 }
 
 export default async function StartupsPage({

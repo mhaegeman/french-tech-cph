@@ -1,5 +1,19 @@
 import { setRequestLocale } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
+import { pageAlternates } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Soft-landing in Denmark",
+    alternates: pageAlternates(locale, "/programs/soft-landing"),
+  };
+}
 
 const STEPS = [
   { n: 1, t: "Discovery call", b: "30-min intro to map your goals onto the Danish ecosystem." },

@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
+import { pageAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 
 const LUMA = process.env.NEXT_PUBLIC_LUMA_CALENDAR_URL;
@@ -11,7 +12,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("events") };
+  return {
+    title: t("events"),
+    alternates: pageAlternates(locale, "/events"),
+  };
 }
 
 export default async function EventsPage({

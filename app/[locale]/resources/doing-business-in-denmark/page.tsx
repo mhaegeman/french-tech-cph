@@ -1,6 +1,20 @@
 import { setRequestLocale } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
 import { useTranslations } from "next-intl";
+import { pageAlternates } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Doing business in Denmark",
+    alternates: pageAlternates(locale, "/resources/doing-business-in-denmark"),
+  };
+}
 
 export default async function Page({
   params,

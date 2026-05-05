@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
 import { Link } from "@/i18n/navigation";
+import { pageAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 
 const PROGRAMS = [
@@ -37,7 +38,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("programs") };
+  return {
+    title: t("programs"),
+    alternates: pageAlternates(locale, "/programs"),
+  };
 }
 
 export default async function ProgramsPage({

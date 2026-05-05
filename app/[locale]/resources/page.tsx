@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
 import { Link } from "@/i18n/navigation";
+import { pageAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 
 const ITEMS = [
@@ -28,7 +29,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("resources") };
+  return {
+    title: t("resources"),
+    alternates: pageAlternates(locale, "/resources"),
+  };
 }
 
 export default async function ResourcesPage({

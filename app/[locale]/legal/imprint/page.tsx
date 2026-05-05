@@ -1,5 +1,19 @@
 import { setRequestLocale } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
+import { pageAlternates } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Imprint",
+    alternates: pageAlternates(locale, "/legal/imprint"),
+  };
+}
 
 export default async function ImprintPage({
   params,

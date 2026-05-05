@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
+import { pageAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 
 const FORM_URL = process.env.NEXT_PUBLIC_CONTACT_FORM_URL;
@@ -13,7 +14,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("contact") };
+  return {
+    title: t("contact"),
+    alternates: pageAlternates(locale, "/contact"),
+  };
 }
 
 export default async function ContactPage({

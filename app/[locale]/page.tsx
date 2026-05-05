@@ -1,4 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
+import { pageAlternates } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { AboutTeaser } from "@/components/sections/AboutTeaser";
@@ -12,6 +14,15 @@ import {
   getPartners,
   getStartups,
 } from "@/lib/directories";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: pageAlternates(locale, "/") };
+}
 
 export default async function HomePage({
   params,
