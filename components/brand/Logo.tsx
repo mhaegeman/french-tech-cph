@@ -9,12 +9,11 @@ type Props = {
 
 /**
  * Single source of truth for the brand lockup. Replace `logo.png` (or this
- * import) to swap the asset everywhere — Header, Footer, future OG images.
+ * import) to swap the asset everywhere it's rendered.
  *
- * Intentionally exposes no "mark" / "horizontal" variant: we only have the
- * full lockup. A real icon-only variant should land as a separate asset
- * (e.g. `logo-mark.png`) and a new component or prop wired to it, not a
- * scaled-down crop of the lockup.
+ * Callers that pass `className` are expected to set their own height (e.g.
+ * `h-72`); we skip the default so they don't have to fight class-ordering
+ * to override it.
  */
 export function Logo({ className }: Props) {
   return (
@@ -23,7 +22,7 @@ export function Logo({ className }: Props) {
       alt="La French Tech Copenhagen"
       priority
       placeholder="blur"
-      className={cn("h-16 w-auto select-none", className)}
+      className={cn("w-auto select-none", className ?? "h-16")}
     />
   );
 }
