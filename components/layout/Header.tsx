@@ -18,13 +18,13 @@ export function Header() {
   const t = useTranslations("nav");
   return (
     <header className="sticky top-0 z-40 border-b border-brand-ink/5 bg-white/80 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between gap-6">
+      <div className="container-page flex h-20 items-center justify-between gap-6 lg:h-24">
         <Link href="/" className="flex items-center" aria-label="Home">
-          <Logo />
+          <Logo className="lg:h-20" />
         </Link>
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-6 text-sm font-medium text-brand-ink/80 lg:flex"
+          className="hidden items-center gap-6 text-base font-medium text-brand-ink/80 lg:flex"
         >
           {NAV_ITEMS.map((item) => (
             <Link
