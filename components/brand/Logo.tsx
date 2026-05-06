@@ -23,7 +23,7 @@ export function Logo({ className }: Props) {
       alt="La French Tech Copenhagen"
       priority
       placeholder="blur"
-      className={cn("h-12 w-auto select-none", className)}
+      className={cn("h-16 w-auto select-none", className)}
     />
   );
 }
