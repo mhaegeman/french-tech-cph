@@ -4,6 +4,8 @@ import type { Partner } from "@/lib/directories";
 
 export function PartnersBand({ partners }: { partners: Partner[] }) {
   const t = useTranslations("home");
+  const tLabels = useTranslations("labels");
+
   return (
     <section className="container-page py-20">
       <div className="flex flex-wrap items-end justify-between gap-4">
@@ -19,16 +21,22 @@ export function PartnersBand({ partners }: { partners: Partner[] }) {
         </Link>
       </div>
 
-      <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-        {partners.slice(0, 12).map((p) => (
-          <li
-            key={p.id}
-            className="flex h-20 items-center justify-center rounded-xl border border-brand-ink/5 bg-white px-3 text-center text-xs font-medium text-brand-ink/70"
-          >
-            {p.name}
-          </li>
-        ))}
-      </ul>
+      {partners.length > 0 ? (
+        <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {partners.slice(0, 12).map((p) => (
+            <li
+              key={p.id}
+              className="flex h-20 items-center justify-center rounded-xl border border-brand-ink/5 bg-white px-3 text-center text-xs font-medium text-brand-ink/70"
+            >
+              {p.name}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-6 rounded-2xl border border-dashed border-brand-ink/15 bg-brand-mist p-8 text-sm text-brand-ink/60">
+          {tLabels("comingSoon")}
+        </p>
+      )}
     </section>
   );
 }

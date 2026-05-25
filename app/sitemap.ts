@@ -26,7 +26,7 @@ const ROUTES = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const base =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-    "https://frenchtechcph.dk";
+    "https://frenchtechcopenhagen.com";
 
   return ROUTES.flatMap((path) =>
     routing.locales.map((locale) => ({

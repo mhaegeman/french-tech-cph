@@ -59,7 +59,7 @@ Without secrets the site still deploys — directories just use the mock data co
 
 ### Custom domain
 
-Once a domain is registered, drop a `CNAME` file into `public/` containing the host (e.g. `frenchtechcph.dk`), point DNS at GitHub Pages, and clear `BASE_PATH` in the workflow (the site will then serve from `/` rather than `/<repo>/`).
+Once a domain is registered, drop a `CNAME` file into `public/` containing the host (e.g. `frenchtechcopenhagen.com`), point DNS at GitHub Pages, and clear `BASE_PATH` in the workflow (the site will then serve from `/` rather than `/<repo>/`).
 
 ## Architecture
 

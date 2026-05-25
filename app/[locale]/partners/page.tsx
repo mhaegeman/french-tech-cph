@@ -51,30 +51,36 @@ export default async function PartnersPage({
       title={t("partners")}
       intro="A growing roster of partners supporting the FR ↔ DK tech bridge."
     >
-      <div className="space-y-12">
-        {TIERS.map((tier) => {
-          const list = partners.filter((p) => p.tier === tier.id);
-          if (list.length === 0) return null;
-          return (
-            <section key={tier.id}>
-              <h2 className="font-display text-2xl font-semibold text-brand-ink">
-                {tier.label}
-              </h2>
-              <p className="mt-1 text-sm text-brand-ink/60">{tier.body}</p>
-              <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                {list.map((p) => (
-                  <li
-                    key={p.id}
-                    className="flex h-24 items-center justify-center rounded-xl border border-brand-ink/5 bg-white px-4 text-center text-sm font-medium text-brand-ink/80"
-                  >
-                    {p.name}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          );
-        })}
-      </div>
+      {partners.length > 0 ? (
+        <div className="space-y-12">
+          {TIERS.map((tier) => {
+            const list = partners.filter((p) => p.tier === tier.id);
+            if (list.length === 0) return null;
+            return (
+              <section key={tier.id}>
+                <h2 className="font-display text-2xl font-semibold text-brand-ink">
+                  {tier.label}
+                </h2>
+                <p className="mt-1 text-sm text-brand-ink/60">{tier.body}</p>
+                <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                  {list.map((p) => (
+                    <li
+                      key={p.id}
+                      className="flex h-24 items-center justify-center rounded-xl border border-brand-ink/5 bg-white px-4 text-center text-sm font-medium text-brand-ink/80"
+                    >
+                      {p.name}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+        </div>
+      ) : (
+        <p className="rounded-2xl border border-dashed border-brand-ink/15 bg-brand-mist p-8 text-sm text-brand-ink/60">
+          Coming soon — partner listings will appear here once confirmed.
+        </p>
+      )}
     </PageShell>
   );
 }

@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 const FORM_URL = process.env.NEXT_PUBLIC_CONTACT_FORM_URL;
 const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@frenchtechcph.dk";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@frenchtechcopenhagen.com";
 
 export async function generateMetadata({
   params,
@@ -93,13 +93,6 @@ export default async function ContactPage({
           >
             Email {CONTACT_EMAIL}
           </a>
-          <p className="mt-6 text-xs text-brand-ink/50">
-            A submission form will appear here once
-            <code className="mx-1 rounded bg-brand-mist px-1.5 py-0.5 text-[10px]">
-              NEXT_PUBLIC_CONTACT_FORM_URL
-            </code>
-            is set (e.g. a Formspree endpoint).
-          </p>
         </div>
       )}
     </PageShell>

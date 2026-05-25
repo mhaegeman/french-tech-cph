@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 
 const FORM_URL = process.env.NEXT_PUBLIC_NEWSLETTER_FORM_URL;
 const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@frenchtechcph.dk";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@frenchtechcopenhagen.com";
 
 export function NewsletterCTA() {
   const t = useTranslations("home");

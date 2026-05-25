@@ -4,6 +4,24 @@ import type { Startup } from "@/lib/directories";
 
 export function FeaturedStartups({ startups }: { startups: Startup[] }) {
   const t = useTranslations("home");
+  const tLabels = useTranslations("labels");
+
+  if (startups.length === 0) {
+    return (
+      <section className="border-y border-brand-ink/5 bg-white">
+        <div className="container-page py-20">
+          <p className="eyebrow">{t("startupsTitle")}</p>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">
+            {t("startupsTitle")}
+          </h2>
+          <p className="mt-6 rounded-2xl border border-dashed border-brand-ink/15 bg-brand-mist p-8 text-sm text-brand-ink/60">
+            {tLabels("comingSoon")}
+          </p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="border-y border-brand-ink/5 bg-white">
       <div className="container-page py-20">

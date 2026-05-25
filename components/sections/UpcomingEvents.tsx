@@ -1,11 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
-/**
- * Replace the iframe `src` with the community Luma calendar URL when available
- * (e.g. https://lu.ma/embed/calendar/<id>/events). Until then we render a
- * placeholder card so the section still ships.
- */
 const LUMA_CALENDAR_EMBED_URL = process.env.NEXT_PUBLIC_LUMA_CALENDAR_URL;
 
 export function UpcomingEvents() {
@@ -39,11 +34,7 @@ export function UpcomingEvents() {
           ) : (
             <div className="flex h-[320px] items-center justify-center px-6 text-center text-sm text-brand-ink/60">
               <p>
-                Luma calendar will appear here once{" "}
-                <code className="rounded bg-brand-mist px-1.5 py-0.5 text-xs">
-                  NEXT_PUBLIC_LUMA_CALENDAR_URL
-                </code>{" "}
-                is set.
+                Events calendar coming soon — check back shortly.
               </p>
             </div>
           )}

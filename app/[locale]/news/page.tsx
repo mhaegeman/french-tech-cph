@@ -25,11 +25,10 @@ export default async function NewsPage({
   return (
     <PageShell
       title={t("news")}
-      intro="Press releases, founder stories, recaps. Sourced from the CMS."
+      intro="Press releases, founder stories, recaps."
     >
       <p className="rounded-2xl border border-dashed border-brand-ink/15 bg-brand-mist p-8 text-sm text-brand-ink/60">
-        News posts will be powered by Sanity. The CMS isn&apos;t wired yet —
-        once it is, this page lists posts with cover images and excerpts.
+        Coming soon — news posts, founder stories and event recaps will appear here.
       </p>
     </PageShell>
   );
