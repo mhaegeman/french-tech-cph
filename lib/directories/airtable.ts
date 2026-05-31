@@ -1,7 +1,7 @@
 /**
  * Thin Airtable REST client. Returns `null` ONLY when env vars are missing
  * (the documented "use mock data" path). Any HTTP error when Airtable IS
- * configured throws — we don't want a transient outage or bad token to
+ * configured throws, because we don't want a transient outage or bad token to
  * silently publish placeholder content as if it were real data.
  *
  * Walks Airtable's `offset` cursor so tables larger than one page (100

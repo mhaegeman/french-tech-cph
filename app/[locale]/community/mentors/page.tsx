@@ -61,7 +61,7 @@ export default async function MentorsPage({
         </ul>
       ) : (
         <p className="rounded-2xl border border-dashed border-brand-ink/15 bg-brand-mist p-8 text-sm text-brand-ink/60">
-          Coming soon — the mentor directory will be populated once the community database is connected.
+          Coming soon. The mentor directory will be populated once the community database is connected.
         </p>
       )}
     </PageShell>

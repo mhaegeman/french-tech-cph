@@ -2,7 +2,7 @@
   "site": {
     "name": "French Tech Copenhagen",
     "tagline": "The bridge between the French and Danish tech ecosystems.",
-    "description": "French Tech Copenhagen connects French and Danish founders, investors, talent and partners — events, mentorship, and a soft-landing for French startups in Denmark."
+    "description": "French Tech Copenhagen connects French and Danish founders, investors, talent and partners through events, mentorship, and a soft-landing for French startups in Denmark."
   },
   "nav": {
     "home": "Home",
@@ -34,21 +34,21 @@
     "aboutBody": "French Tech Copenhagen is a volunteer-run community connecting the French and Danish tech ecosystems. We gather founders, operators, investors, mentors and partners to grow opportunities on both sides of the bridge.",
     "aboutCta": "Read more",
     "upcomingTitle": "Upcoming events",
-    "upcomingBody": "Breakfasts, panels, founder dinners and bigger conferences — powered by Luma.",
+    "upcomingBody": "Breakfasts, panels, founder dinners and bigger conferences, powered by Luma.",
     "upcomingCta": "See all events",
     "verticalsTitle": "Focus areas",
     "verticals": {
       "climate": {
         "title": "Climate & Energy",
-        "body": "Wind, hydrogen, energy efficiency, sustainable mobility — France and Denmark share a climate-tech agenda."
+        "body": "Wind, hydrogen, energy efficiency, sustainable mobility. France and Denmark share a climate-tech agenda."
       },
       "fintech": {
         "title": "Fintech & Payments",
-        "body": "Open banking, payments, B2B SaaS for finance — a strong French export, a strong Danish appetite."
+        "body": "Open banking, payments, B2B SaaS for finance: a strong French export, a strong Danish appetite."
       },
       "health": {
         "title": "Health & Life Sciences",
-        "body": "Medtech, digital health, biotech — building bridges with Medicon Valley."
+        "body": "Medtech, digital health, biotech, building bridges with Medicon Valley."
       }
     },
     "startupsTitle": "Featured startups",
@@ -59,7 +59,7 @@
     "newsTitle": "Latest news",
     "newsCta": "All news",
     "newsletterTitle": "Stay in the loop",
-    "newsletterBody": "Monthly newsletter — events, opportunities, founder stories.",
+    "newsletterBody": "Monthly newsletter with events, opportunities, founder stories.",
     "newsletterCta": "Subscribe"
   },
   "footer": {
@@ -69,6 +69,6 @@
   },
   "labels": {
     "comingSoon": "Coming soon",
-    "placeholder": "Full content coming soon — outline below."
+    "placeholder": "Full content coming soon. Outline below."
   }
 }

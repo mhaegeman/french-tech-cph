@@ -2,23 +2,23 @@
 
 **The bridge between the French and Danish tech ecosystems.**
 
-French Tech Copenhagen is a volunteer-run community connecting French and Danish founders, operators, investors, mentors and partners. We're the local Copenhagen node of [La French Tech](https://lafrenchtech.gouv.fr/en/) — the worldwide network of French tech communities backed by the French government.
+French Tech Copenhagen is a volunteer-run community connecting French and Danish founders, operators, investors, mentors and partners. We're the local Copenhagen node of [La French Tech](https://lafrenchtech.gouv.fr/en/), the worldwide network of French tech communities backed by the French government.
 
 This repository hosts the source code of our website: **[frenchtechcopenhagen.com](https://frenchtechcopenhagen.com)**.
 
 ## What we do
 
-- **Events** — breakfasts, panels, founder dinners and bigger conferences across Copenhagen.
-- **Soft-landing** — a step-by-step path for French startups setting up in Denmark.
-- **Mentorship** — pairing founders with experienced operators on both sides of the bridge.
-- **Community** — a directory of French startups in Denmark, members, mentors and partners.
-- **Programs** — local initiatives plus the national programs run by La Mission French Tech (Next40/120, French Tech 2030, Tremplin).
+- **Events**: breakfasts, panels, founder dinners and bigger conferences across Copenhagen.
+- **Soft-landing**: a step-by-step path for French startups setting up in Denmark.
+- **Mentorship**: pairing founders with experienced operators on both sides of the bridge.
+- **Community**: a directory of French startups in Denmark, members, mentors and partners.
+- **Programs**: local initiatives plus the national programs run by La Mission French Tech (Next40/120, French Tech 2030, Tremplin).
 
 ## Focus areas
 
-- **Climate & Energy** — wind, hydrogen, energy efficiency, sustainable mobility.
-- **Fintech & Payments** — open banking, payments, B2B SaaS for finance.
-- **Health & Life Sciences** — medtech, digital health, biotech, with strong ties to Medicon Valley.
+- **Climate & Energy**: wind, hydrogen, energy efficiency, sustainable mobility.
+- **Fintech & Payments**: open banking, payments, B2B SaaS for finance.
+- **Health & Life Sciences**: medtech, digital health, biotech, with strong ties to Medicon Valley.
 
 ## Get involved
 
@@ -43,11 +43,11 @@ The site is built with **Next.js**, **React** and **TypeScript**, styled with **
 
 ```bash
 npm install
-cp .env.example .env.local   # optional — the site runs with empty values
+cp .env.example .env.local   # optional, the site runs with empty values
 npm run dev
 ```
 
-Then open <http://localhost:3000>. The site works without any environment variables — directories fall back to mock data and the events calendar shows a placeholder.
+Then open <http://localhost:3000>. The site works without any environment variables: directories fall back to mock data and the events calendar shows a placeholder.
 
 ### Scripts
 
@@ -64,14 +64,14 @@ Pushes to `main` auto-deploy via GitHub Actions (`.github/workflows/deploy.yml`)
 
 Optional Actions variables for live data and forms:
 
-- `NEXT_PUBLIC_LUMA_CALENDAR_URL` — embedded events calendar
-- `NEXT_PUBLIC_CONTACT_FORM_URL` / `NEXT_PUBLIC_NEWSLETTER_FORM_URL` — Formspree / Mailchimp endpoints
-- `NEXT_PUBLIC_CONTACT_EMAIL` — fallback contact address
-- `AIRTABLE_API_KEY` / `AIRTABLE_BASE_ID` — live community directories
+- `NEXT_PUBLIC_LUMA_CALENDAR_URL`: embedded events calendar
+- `NEXT_PUBLIC_CONTACT_FORM_URL` / `NEXT_PUBLIC_NEWSLETTER_FORM_URL`: Formspree / Mailchimp endpoints
+- `NEXT_PUBLIC_CONTACT_EMAIL`: fallback contact address
+- `AIRTABLE_API_KEY` / `AIRTABLE_BASE_ID`: live community directories
 
 ### Contributing
 
-Found a typo, a broken link, or want to suggest a feature? Open an issue or a pull request — contributions from the community are welcome.
+Found a typo, a broken link, or want to suggest a feature? Open an issue or a pull request. Contributions from the community are welcome.
 
 ## License
 

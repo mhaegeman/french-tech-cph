@@ -28,7 +28,7 @@ export default async function NewsPage({
       intro="Press releases, founder stories, recaps."
     >
       <p className="rounded-2xl border border-dashed border-brand-ink/15 bg-brand-mist p-8 text-sm text-brand-ink/60">
-        Coming soon — news posts, founder stories and event recaps will appear here.
+        Coming soon. News posts, founder stories and event recaps will appear here.
       </p>
     </PageShell>
   );

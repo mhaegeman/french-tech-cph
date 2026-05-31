@@ -78,7 +78,7 @@ export default async function PartnersPage({
         </div>
       ) : (
         <p className="rounded-2xl border border-dashed border-brand-ink/15 bg-brand-mist p-8 text-sm text-brand-ink/60">
-          Coming soon — partner listings will appear here once confirmed.
+          Coming soon. Partner listings will appear here once confirmed.
         </p>
       )}
     </PageShell>

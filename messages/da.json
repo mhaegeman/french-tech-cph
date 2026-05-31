@@ -2,7 +2,7 @@
   "site": {
     "name": "French Tech Copenhagen",
     "tagline": "Broen mellem det franske og det danske tech-økosystem.",
-    "description": "French Tech Copenhagen forbinder franske og danske stiftere, investorer, talenter og partnere — events, mentorordninger og blød landing for franske startups i Danmark."
+    "description": "French Tech Copenhagen forbinder franske og danske stiftere, investorer, talenter og partnere gennem events, mentorordninger og blød landing for franske startups i Danmark."
   },
   "nav": {
     "home": "Forside",
@@ -34,21 +34,21 @@
     "aboutBody": "French Tech Copenhagen er et frivilligt drevet fællesskab, der forbinder det franske og det danske tech-økosystem. Vi samler stiftere, ledere, investorer, mentorer og partnere for at skabe muligheder på begge sider af broen.",
     "aboutCta": "Læs mere",
     "upcomingTitle": "Kommende events",
-    "upcomingBody": "Morgenmøder, paneler, stiftermiddage og større konferencer — drevet af Luma.",
+    "upcomingBody": "Morgenmøder, paneler, stiftermiddage og større konferencer, drevet af Luma.",
     "upcomingCta": "Se alle events",
     "verticalsTitle": "Fokusområder",
     "verticals": {
       "climate": {
         "title": "Klima & Energi",
-        "body": "Vind, brint, energieffektivitet, bæredygtig mobilitet — Frankrig og Danmark deler en klima-tech-agenda."
+        "body": "Vind, brint, energieffektivitet, bæredygtig mobilitet. Frankrig og Danmark deler en klima-tech-agenda."
       },
       "fintech": {
         "title": "Fintech & Betalinger",
-        "body": "Open banking, betalinger, B2B SaaS til finans — en stærk fransk eksport og en stærk dansk appetit."
+        "body": "Open banking, betalinger, B2B SaaS til finans: en stærk fransk eksport og en stærk dansk appetit."
       },
       "health": {
         "title": "Sundhed & Life Sciences",
-        "body": "Medtech, digital sundhed, biotech — broer til Medicon Valley."
+        "body": "Medtech, digital sundhed, biotech, broer til Medicon Valley."
       }
     },
     "startupsTitle": "Udvalgte startups",
@@ -59,7 +59,7 @@
     "newsTitle": "Seneste nyheder",
     "newsCta": "Alle nyheder",
     "newsletterTitle": "Hold dig opdateret",
-    "newsletterBody": "Månedligt nyhedsbrev — events, muligheder, stifterhistorier.",
+    "newsletterBody": "Månedligt nyhedsbrev med events, muligheder, stifterhistorier.",
     "newsletterCta": "Tilmeld"
   },
   "footer": {
@@ -69,6 +69,6 @@
   },
   "labels": {
     "comingSoon": "Kommer snart",
-    "placeholder": "Fuldt indhold kommer snart — oversigt nedenfor."
+    "placeholder": "Fuldt indhold kommer snart. Oversigt nedenfor."
   }
 }

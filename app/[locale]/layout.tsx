@@ -25,7 +25,7 @@ export async function generateMetadata({
   return {
     title: { default: t("name"), template: `%s · ${t("name")}` },
     description: t("description"),
-    // No `alternates` here on purpose — it would be inherited by every nested
+    // No `alternates` here on purpose: it would be inherited by every nested
     // page and emit the locale-home URL as their canonical. Each page builds
     // its own alternates via `pageAlternates()` in lib/seo.ts.
   };

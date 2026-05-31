@@ -54,7 +54,7 @@ export default async function MembersPage({
     <PageShell
       eyebrow="French Tech Copenhagen"
       title={t("members")}
-      intro="The volunteers behind French Tech Copenhagen — a board and a team of ambassadors building bridges between the French and Danish tech ecosystems."
+      intro="The volunteers behind French Tech Copenhagen: a board and a team of ambassadors building bridges between the French and Danish tech ecosystems."
     >
       <section>
         <h2 className="font-display text-2xl font-semibold text-brand-ink">
