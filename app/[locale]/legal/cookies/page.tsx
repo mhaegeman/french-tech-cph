@@ -26,12 +26,15 @@ export default async function CookiesPage({
     <PageShell
       eyebrow="Legal"
       title="Cookie policy"
-      intro="We use Plausible for privacy-friendly analytics — no cookies, no personal data."
+      intro="This site does not use cookies and does not run analytics."
     >
-      <p className="rounded-2xl border border-dashed border-brand-ink/15 bg-brand-mist p-8 text-sm text-brand-ink/60">
-        Detailed cookie list pending — only embedded third-parties (Luma,
-        Mailchimp) may set cookies on their respective iframes.
-      </p>
+      <div className="prose max-w-prose text-brand-ink/80">
+        <p>
+          We don&apos;t set cookies and we don&apos;t track visitors. If we
+          ever add analytics or embed third-party services that do set cookies,
+          this page will be updated and you&apos;ll be asked for consent first.
+        </p>
+      </div>
     </PageShell>
   );
 }

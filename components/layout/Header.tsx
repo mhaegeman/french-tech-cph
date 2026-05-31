@@ -4,12 +4,7 @@ import { LocaleSwitcher } from "./LocaleSwitcher";
 
 const NAV_ITEMS = [
   { href: "/about", labelKey: "about" },
-  { href: "/community", labelKey: "community" },
   { href: "/events", labelKey: "events" },
-  { href: "/programs", labelKey: "programs" },
-  { href: "/resources", labelKey: "resources" },
-  { href: "/news", labelKey: "news" },
-  { href: "/partners", labelKey: "partners" },
 ] as const;
 
 export function Header() {

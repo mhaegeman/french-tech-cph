@@ -6,21 +6,8 @@ export const dynamic = "force-static";
 const ROUTES = [
   "",
   "/about",
-  "/community",
-  "/community/startups",
-  "/community/members",
-  "/community/mentors",
   "/events",
-  "/programs",
-  "/programs/soft-landing",
-  "/resources",
-  "/resources/doing-business-in-denmark",
-  "/resources/doing-business-in-france",
-  "/resources/ecosystem-map",
-  "/news",
-  "/partners",
   "/contact",
-  "/press",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
