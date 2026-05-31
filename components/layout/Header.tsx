@@ -14,10 +14,10 @@ export function Header() {
   const tSite = useTranslations("site");
   return (
     <header className="sticky top-0 z-40 border-b border-brand-ink/5 bg-white/80 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between gap-6">
+      <div className="container-page flex h-16 items-center justify-between gap-3 lg:gap-6">
         <Link
           href="/"
-          className="flex items-center font-display text-lg font-bold tracking-tight text-brand-ink"
+          className="flex items-center whitespace-nowrap font-display text-sm font-bold tracking-tight text-brand-ink sm:text-base lg:text-lg"
           aria-label={tSite("name")}
         >
           French Tech&nbsp;<span className="text-brand-red">Copenhagen</span>
@@ -36,13 +36,13 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <a
             href="https://www.linkedin.com/company/frenchtechcopenhagen/"
             target="_blank"
             rel="noreferrer"
             aria-label="French Tech Copenhagen on LinkedIn"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#0A66C2] text-white transition hover:bg-[#084d92] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
+            className="hidden h-9 w-9 items-center justify-center rounded-full bg-[#0A66C2] text-white transition hover:bg-[#084d92] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40 sm:inline-flex"
           >
             <svg
               viewBox="0 0 24 24"
