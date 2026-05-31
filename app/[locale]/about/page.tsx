@@ -29,25 +29,14 @@ export default async function AboutPage({
       title={t("about")}
       intro={tHome("aboutBody")}
     >
-      <section className="grid gap-10 md:grid-cols-2">
-        <div>
-          <h2 className="font-display text-2xl font-semibold text-brand-ink">
-            Mission
-          </h2>
-          <p className="mt-3 text-brand-ink/70">
-            Connect French and Danish tech ecosystems through events, mentoring,
-            and a soft-landing for French startups crossing into the Nordics.
-          </p>
-        </div>
-        <div>
-          <h2 className="font-display text-2xl font-semibold text-brand-ink">
-            Board
-          </h2>
-          <p className="mt-3 text-brand-ink/70">
-            The board is a volunteer team of founders, operators and investors
-            with strong ties on both sides. Profiles will be added shortly.
-          </p>
-        </div>
+      <section>
+        <h2 className="font-display text-2xl font-semibold text-brand-ink">
+          Mission
+        </h2>
+        <p className="mt-3 max-w-2xl text-brand-ink/70">
+          Connect French and Danish tech ecosystems through events, mentoring,
+          and a soft-landing for French startups crossing into the Nordics.
+        </p>
       </section>
     </PageShell>
   );

@@ -43,11 +43,7 @@ export default async function EventsPage({
         ) : (
           <div className="flex h-[320px] items-center justify-center px-6 text-center text-sm text-brand-ink/60">
             <p>
-              Luma calendar will appear here once{" "}
-              <code className="rounded bg-brand-mist px-1.5 py-0.5 text-xs">
-                NEXT_PUBLIC_LUMA_CALENDAR_URL
-              </code>{" "}
-              is set in environment.
+              Events calendar coming soon — check back shortly.
             </p>
           </div>
         )}

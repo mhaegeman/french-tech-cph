@@ -44,10 +44,10 @@ export default async function PressPage({
           <p className="mt-2 text-sm text-brand-ink/70">
             For press inquiries, write to{" "}
             <a
-              href="mailto:press@frenchtechcph.dk"
+              href="mailto:press@frenchtechcopenhagen.com"
               className="font-semibold text-brand-red hover:underline"
             >
-              press@frenchtechcph.dk
+              press@frenchtechcopenhagen.com
             </a>
             .
           </p>
