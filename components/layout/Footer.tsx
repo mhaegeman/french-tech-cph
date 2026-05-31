@@ -15,9 +15,8 @@ const LEGAL = [
   { href: "/legal/imprint", label: "Imprint" },
 ] as const;
 
-const SOCIALS = [
-  { href: "https://www.linkedin.com/company/frenchtechcopenhagen/", label: "LinkedIn" },
-];
+const LINKEDIN_URL =
+  "https://www.linkedin.com/company/frenchtechcopenhagen/";
 
 export function Footer() {
   const tNav = useTranslations("nav");
@@ -33,19 +32,21 @@ export function Footer() {
           <p className="mt-4 max-w-prose text-sm text-brand-ink/70">
             {tSite("description")}
           </p>
-          <div className="mt-5 flex gap-3 text-xs font-semibold">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.href}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-brand-ink/15 bg-white px-3 py-1.5 hover:bg-white"
-              >
-                {s.label}
-              </a>
-            ))}
-          </div>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0A66C2] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#084d92] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="h-4 w-4 fill-current"
+            >
+              <path d="M20.452 20.452h-3.555v-5.569c0-1.328-.024-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.94v5.666H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.602 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            {tFooter("followLinkedIn")}
+          </a>
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-brand-ink/60">
