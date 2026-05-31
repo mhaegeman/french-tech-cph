@@ -32,10 +32,19 @@ export function UpcomingEvents() {
               loading="lazy"
             />
           ) : (
-            <div className="flex h-[320px] items-center justify-center px-6 text-center text-sm text-brand-ink/60">
-              <p>
-                Events calendar coming soon — check back shortly.
+            <div className="flex flex-col items-center justify-center gap-4 px-6 py-16 text-center">
+              <p className="max-w-md text-brand-ink/70">
+                No upcoming events on the calendar yet — see past events or get
+                in touch to be first to hear about the next one.
               </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link href="/events" className="btn-secondary">
+                  See past events →
+                </Link>
+                <Link href="/contact" className="btn-primary">
+                  Get notified
+                </Link>
+              </div>
             </div>
           )}
         </div>
