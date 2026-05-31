@@ -1,57 +1,37 @@
-import { setRequestLocale, getTranslations } from "next-intl/server";
-import { PageShell } from "@/components/layout/PageShell";
-import { getMembers } from "@/lib/directories";
-import { pageAlternates } from "@/lib/seo";
+import { setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "nav" });
-  return {
-    title: t("members"),
-    alternates: pageAlternates(locale, "/community/members"),
-  };
-}
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
-export default async function MembersPage({
+export default async function MembersRedirect({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "nav" });
-  const members = await getMembers();
+  const target = `/${locale}/members/`;
 
   return (
-    <PageShell
-      eyebrow={t("community")}
-      title={t("members")}
-      intro="Founders, operators and investors active in the community."
-    >
-      {members.length > 0 ? (
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {members.map((m) => (
-            <li
-              key={m.id}
-              className="rounded-xl border border-brand-ink/5 bg-white p-4"
-            >
-              <p className="font-semibold text-brand-ink">{m.name}</p>
-              <p className="text-sm text-brand-ink/60">
-                {[m.role, m.company].filter(Boolean).join(" · ")}
-              </p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="rounded-2xl border border-dashed border-brand-ink/15 bg-brand-mist p-8 text-sm text-brand-ink/60">
-          Coming soon — the member directory will be populated once the community database is connected.
-        </p>
-      )}
-    </PageShell>
+    <div className="container-page py-32 text-center">
+      <meta httpEquiv="refresh" content={`0; url=${target}`} />
+      <p className="text-brand-ink/70">
+        This page has moved.{" "}
+        <Link
+          href="/members"
+          className="font-semibold text-brand-red hover:underline"
+        >
+          Go to the Members page →
+        </Link>
+      </p>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.location.replace(${JSON.stringify(target)});`,
+        }}
+      />
+    </div>
   );
 }
