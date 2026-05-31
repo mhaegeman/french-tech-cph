@@ -91,4 +91,10 @@ export const AMBASSADORS: TeamMember[] = [
     title: "AI lead",
     photo: "/team/maxime-haegeman.png",
   },
+  {
+    name: "Nicolas Chabauty",
+    role: "Ambassador",
+    title: "Sports lead",
+    photo: "/team/nicolas-chabauty.png",
+  },
 ];
