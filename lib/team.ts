@@ -88,7 +88,7 @@ export const AMBASSADORS: TeamMember[] = [
   {
     name: "Maxime Haegeman",
     role: "Ambassador",
-    title: "Platform lead",
+    title: "AI lead",
     photo: "/team/maxime-haegeman.png",
   },
 ];
