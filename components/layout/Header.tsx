@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { MobileNav } from "./MobileNav";
 
 const NAV_ITEMS = [
   { href: "/about", labelKey: "about" },
@@ -55,6 +56,7 @@ export function Header() {
           <Link href="/contact" className="btn-primary hidden sm:inline-flex">
             {t("contact")}
           </Link>
+          <MobileNav />
         </div>
       </div>
     </header>
