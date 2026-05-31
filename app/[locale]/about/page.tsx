@@ -68,14 +68,14 @@ export default async function AboutPage({
             </p>
             <p className="mt-4 text-brand-ink/80">
               AEPIFD is the legal carrier of French Tech Copenhagen for the
-              2026–2028 labellisation period — holding the convention, the
+              2026–2028 labellisation period, holding the convention, the
               CVR and the bank account, while French Tech Copenhagen runs its
               programs and community autonomously.
             </p>
             <p className="mt-3 text-brand-ink/80">
               AEPIFD also organises its own working groups, webinars and
               workshops for French entrepreneurs and independent professionals
-              in Denmark — covering company setup, taxes, communication,
+              in Denmark, covering company setup, taxes, communication,
               customer relations, pitching, and regular networking evenings.
             </p>
             <a

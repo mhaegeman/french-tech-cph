@@ -32,7 +32,7 @@ export default async function ContactPage({
   return (
     <PageShell
       title={t("contact")}
-      intro="Tell us what you're working on — joining the community, partnering, or press."
+      intro="Tell us what you're working on: joining the community, partnering, or press."
     >
       <ContactForm email={CONTACT_EMAIL} />
     </PageShell>

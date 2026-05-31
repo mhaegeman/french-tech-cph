@@ -20,7 +20,7 @@ export function ContactForm({ email }: { email: string }) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const subject = `${reasonLabel} — ${name || "French Tech Copenhagen"}`;
+    const subject = `${reasonLabel}: ${name || "French Tech Copenhagen"}`;
     const body = [
       `Name: ${name}`,
       `Email: ${from}`,

@@ -34,7 +34,7 @@ export function UpcomingEvents() {
           ) : (
             <div className="flex flex-col items-center justify-center gap-4 px-6 py-16 text-center">
               <p className="max-w-md text-brand-ink/70">
-                No upcoming events on the calendar yet — see past events or get
+                No upcoming events on the calendar yet. See past events or get
                 in touch to be first to hear about the next one.
               </p>
               <div className="flex flex-wrap justify-center gap-3">

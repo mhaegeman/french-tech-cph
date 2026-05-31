@@ -28,12 +28,12 @@ export default async function SoftLandingPage({
     <PageShell
       eyebrow="Programs"
       title="Soft-landing in Denmark"
-      intro="A program to help French founders set up in Copenhagen — being built with the community."
+      intro="A program to help French founders set up in Copenhagen, being built with the community."
     >
       <div className="max-w-2xl rounded-2xl border border-brand-ink/5 bg-white p-8">
         <p className="text-brand-ink/80">
-          If you&apos;re a French founder considering Denmark, get in touch —
-          we&apos;d love to hear what you&apos;re working on and connect you with
+          If you&apos;re a French founder considering Denmark, get in touch.
+          We&apos;d love to hear what you&apos;re working on and connect you with
           the right people.
         </p>
         <Link href="/contact" className="btn-primary mt-6 inline-flex">

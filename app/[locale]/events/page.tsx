@@ -49,7 +49,7 @@ export default async function EventsPage({
           ) : (
             <div className="flex flex-col items-center justify-center gap-4 px-6 py-16 text-center">
               <p className="max-w-md text-brand-ink/70">
-                No upcoming events scheduled yet — drop us a line if you&apos;d
+                No upcoming events scheduled yet. Drop us a line if you&apos;d
                 like to be first to hear about the next one.
               </p>
               <Link href="/contact" className="btn-primary">

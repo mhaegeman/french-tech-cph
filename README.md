@@ -1,133 +1,78 @@
 # French Tech Copenhagen
 
-The website for **French Tech Copenhagen** — the local node of [La French Tech](https://lafrenchtech.gouv.fr/en/) connecting the French and Danish tech ecosystems.
+**The bridge between the French and Danish tech ecosystems.**
 
-## Stack
+French Tech Copenhagen is a volunteer-run community connecting French and Danish founders, operators, investors, mentors and partners. We're the local Copenhagen node of [La French Tech](https://lafrenchtech.gouv.fr/en/), the worldwide network of French tech communities backed by the French government.
 
-- **Next.js 15** (App Router, **static export**) + **React 19** + **TypeScript**
-- **Tailwind CSS** for styling
-- **next-intl** for i18n (`en`, `da`)
-- **Airtable** as the source of truth for directories (members, startups, mentors, partners)
-- **Luma** for events (embedded calendar)
-- **GitHub Pages** for hosting (no server, no API routes)
-- **Sanity** planned for editorial content (pages, news, programs) — Phase 2
+This repository hosts the source code of our website: **[frenchtechcopenhagen.com](https://frenchtechcopenhagen.com)**.
 
-## Local development
+## What we do
+
+- **Events**: breakfasts, panels, founder dinners and bigger conferences across Copenhagen.
+- **Soft-landing**: a step-by-step path for French startups setting up in Denmark.
+- **Mentorship**: pairing founders with experienced operators on both sides of the bridge.
+- **Community**: a directory of French startups in Denmark, members, mentors and partners.
+- **Programs**: local initiatives plus the national programs run by La Mission French Tech (Next40/120, French Tech 2030, Tremplin).
+
+## Focus areas
+
+- **Climate & Energy**: wind, hydrogen, energy efficiency, sustainable mobility.
+- **Fintech & Payments**: open banking, payments, B2B SaaS for finance.
+- **Health & Life Sciences**: medtech, digital health, biotech, with strong ties to Medicon Valley.
+
+## Get involved
+
+- **Join the community** → the [contact page](https://frenchtechcopenhagen.com/en/contact) on the site.
+- **Come to an event** → see the [events page](https://frenchtechcopenhagen.com/en/events).
+- **Become a partner** → reach out via the contact form.
+- **Follow us on LinkedIn** for updates between newsletters.
+
+## Our partners
+
+We work with the **French Embassy in Denmark**, **Business France**, the **French Chamber of Commerce in Denmark**, and a growing roster of corporate and ecosystem partners.
+
+French Tech Copenhagen operates in partnership with **AEPIFD** (Association des Entrepreneurs et Professionnels Indépendants Français du Danemark), which acts as the legal carrier for the 2026–2028 labellisation period.
+
+---
+
+## For developers
+
+The site is built with **Next.js**, **React** and **TypeScript**, styled with **Tailwind CSS**, translated with **next-intl** (English and Danish), and deployed as a static export to **GitHub Pages**. Community directories are powered by **Airtable**; events by **Luma**.
+
+### Run it locally
 
 ```bash
 npm install
-cp .env.example .env.local   # fill what you have, others are optional
+cp .env.example .env.local   # optional, the site runs with empty values
 npm run dev
 ```
 
-Open http://localhost:3000 — you'll be redirected to `/en/`. Switch language via the header switcher (`EN` / `DA`).
+Then open <http://localhost:3000>. The site works without any environment variables: directories fall back to mock data and the events calendar shows a placeholder.
 
-The site builds and runs **without any environment variables** — directories fall back to mock data in `lib/directories/mock.ts` and the events calendar shows a placeholder until `NEXT_PUBLIC_LUMA_CALENDAR_URL` is set.
-
-## Scripts
+### Scripts
 
 | Command | What it does |
 |---|---|
 | `npm run dev` | Local dev server |
 | `npm run build` | Static export to `./out` |
 | `npm run lint` | ESLint |
-| `npm run typecheck` | TypeScript only |
+| `npm run typecheck` | TypeScript check |
 
-## Deploying to GitHub Pages
+### Deployment
 
-The repo ships with `.github/workflows/deploy.yml`, which builds the static export and publishes it to GitHub Pages.
+Pushes to `main` auto-deploy via GitHub Actions (`.github/workflows/deploy.yml`). A scheduled rebuild runs daily so Airtable edits show up within 24 hours.
 
-### One-time setup
+Optional Actions variables for live data and forms:
 
-1. **Repo → Settings → Pages → Source = "GitHub Actions"**.
-2. Optional: add Actions **Variables** (Settings → Secrets and variables → Actions → Variables):
-   - `NEXT_PUBLIC_LUMA_CALENDAR_URL`
-   - `NEXT_PUBLIC_CONTACT_FORM_URL` (e.g. a Formspree endpoint)
-   - `NEXT_PUBLIC_NEWSLETTER_FORM_URL`
-   - `NEXT_PUBLIC_CONTACT_EMAIL`
-3. Optional: add Actions **Secrets** for live Airtable data:
-   - `AIRTABLE_API_KEY`
-   - `AIRTABLE_BASE_ID`
+- `NEXT_PUBLIC_LUMA_CALENDAR_URL`: embedded events calendar
+- `NEXT_PUBLIC_CONTACT_FORM_URL` / `NEXT_PUBLIC_NEWSLETTER_FORM_URL`: Formspree / Mailchimp endpoints
+- `NEXT_PUBLIC_CONTACT_EMAIL`: fallback contact address
+- `AIRTABLE_API_KEY` / `AIRTABLE_BASE_ID`: live community directories
 
-Without secrets the site still deploys — directories just use the mock data committed to `lib/directories/mock.ts`.
+### Contributing
 
-### Triggering a deploy
+Found a typo, a broken link, or want to suggest a feature? Open an issue or a pull request. Contributions from the community are welcome.
 
-- Push to `main` → auto-deploy.
-- Or run the workflow manually: **Actions → Deploy to GitHub Pages → Run workflow**.
-- A scheduled rebuild runs daily at 06:00 UTC so Airtable edits show up within 24 h.
+## License
 
-### Custom domain
-
-Once a domain is registered, drop a `CNAME` file into `public/` containing the host (e.g. `frenchtechcopenhagen.com`), point DNS at GitHub Pages, and clear `BASE_PATH` in the workflow (the site will then serve from `/` rather than `/<repo>/`).
-
-## Architecture
-
-```
-app/
-  layout.tsx                 Passthrough root
-  page.tsx                   Root redirect to /en/ (meta-refresh)
-  [locale]/
-    layout.tsx               <html>/<body>, header, footer, NextIntlProvider
-    page.tsx                 Home
-    about/                   About + board
-    community/               Community hub + sub-pages
-      startups/              From Airtable
-      members/               From Airtable
-      mentors/               From Airtable
-    events/                  Luma embed
-    programs/                Local + national programs
-      soft-landing/
-    resources/               Doing-business guides + ecosystem map
-    news/                    Sanity-driven (Phase 2)
-    partners/                From Airtable
-    contact/                 Form -> external endpoint (or mailto fallback)
-    press/
-    legal/                   Privacy / Cookies / Imprint
-  sitemap.ts                 Sitemap with locale variants
-  robots.ts
-components/
-  brand/Logo.tsx             Single source of truth — swap when final logo lands
-  layout/                    Header, Footer, LocaleSwitcher, PageShell
-  sections/                  Home-page sections
-i18n/
-  routing.ts navigation.ts request.ts
-lib/
-  cn.ts                      tiny class-name helper
-  directories/               Airtable abstraction (with mock fallback)
-messages/
-  en.json da.json
-```
-
-### Editing directories (members, startups, mentors, partners)
-
-Directories live in **Airtable**, not in the codebase. The board edits four tables (`Members`, `Startups`, `Mentors`, `Partners`); changes show up after the next deploy (push, manual workflow run, or the daily scheduled rebuild).
-
-When `AIRTABLE_API_KEY` and `AIRTABLE_BASE_ID` are not set, the site uses mock data so local dev and CI work without secrets.
-
-To swap Airtable for Google Sheets later, only `lib/directories/airtable.ts` needs to be replaced.
-
-### Forms (contact + newsletter)
-
-GitHub Pages can't run server code, so forms post to an external endpoint via `NEXT_PUBLIC_CONTACT_FORM_URL` / `NEXT_PUBLIC_NEWSLETTER_FORM_URL`. Recommended options:
-
-- [**Formspree**](https://formspree.io) — free tier, just paste the endpoint URL.
-- [**Web3Forms**](https://web3forms.com) — free, no signup.
-- **Mailchimp** embedded form for the newsletter (paste the action URL).
-
-Without these set, the contact page shows a `mailto:` fallback button.
-
-### Brand & logo
-
-The placeholder logo lives in `components/brand/Logo.tsx`. When the final logo arrives, replace the JSX inside that single component — every header, footer, OG image and favicon usage flows through it.
-
-### Labellisation feature flag
-
-The "official La French Tech community in Copenhagen" wording is gated behind a `siteSettings.isOfficiallyLabelled` flag (to be added in Sanity once the CMS is wired). Until the label lands, copy uses the neutral "the French Tech community in Copenhagen" framing.
-
-## Roadmap
-
-- **Phase 1 (this branch)**: Project skeleton, layout, home, page stubs, directories with mock fallback, Luma slot, GitHub Pages deploy.
-- **Phase 2**: Sanity Studio + content schemas (pages, news, board, programs, events). Move off GH Pages to Vercel/Netlify if/when dynamic features are needed.
-- **Phase 3**: Wire Formspree (contact) + Mailchimp/Brevo (newsletter).
-- **Phase 4**: Real content, Plausible analytics, OG images, Lighthouse passes.
+Built by the community, for the community.

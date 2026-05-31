@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 const PROGRAMS = [
   {
     title: "Soft-landing FR → DK",
-    body: "From legal entity setup to first hires — a step-by-step path for French startups entering Denmark.",
+    body: "From legal entity setup to first hires: a step-by-step path for French startups entering Denmark.",
     href: "/programs/soft-landing",
     scope: "local" as const,
   },

@@ -9,7 +9,7 @@ import { routing } from "@/i18n/routing";
  * the canonical for every nested page. Each `generateMetadata` calls this
  * helper with its own route path so SEO is correct per page.
  *
- * Pass the route relative to the locale segment, e.g. "/about" — not
+ * Pass the route relative to the locale segment, e.g. "/about", not
  * "/en/about".
  */
 export function pageAlternates(
