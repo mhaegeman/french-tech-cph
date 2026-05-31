@@ -19,7 +19,6 @@ export async function generateMetadata({
 
 const SUBPAGES = [
   { href: "/community/startups", labelKey: "startups", body: "Filterable directory of French startups in or with Denmark." },
-  { href: "/community/members", labelKey: "members", body: "Founders, operators and investors active in the community." },
   { href: "/community/mentors", labelKey: "mentors", body: "Volunteer mentors offering office hours and intros." },
 ] as const;
 
