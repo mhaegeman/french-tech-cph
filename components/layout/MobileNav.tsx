@@ -8,15 +8,8 @@ import { Link } from "@/i18n/navigation";
 
 const MOBILE_NAV_ITEMS = [
   { href: "/about", labelKey: "about" },
-  { href: "/community", labelKey: "community" },
-  { href: "/events", labelKey: "events" },
-  { href: "/programs", labelKey: "programs" },
   { href: "/members", labelKey: "members" },
-  { href: "/partners", labelKey: "partners" },
-  { href: "/resources", labelKey: "resources" },
-  { href: "/news", labelKey: "news" },
-  { href: "/press", labelKey: "press" },
-  { href: "/contact", labelKey: "contact" },
+  { href: "/events", labelKey: "events" },
 ] as const;
 
 export function MobileNav() {
