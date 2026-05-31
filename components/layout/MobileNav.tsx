@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
 import { Link } from "@/i18n/navigation";
@@ -22,6 +23,11 @@ export function MobileNav() {
   const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -76,39 +82,44 @@ export function MobileNav() {
         </svg>
       </button>
 
-      {open && (
-        <div
-          className="fixed inset-0 top-16 z-30 bg-brand-ink/40 backdrop-blur-sm"
-          onClick={() => setOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
-      <div
-        id="mobile-nav-panel"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile navigation"
-        className={`fixed inset-x-0 top-16 z-40 origin-top border-b border-brand-ink/5 bg-white shadow-lg transition-transform duration-200 ease-out ${
-          open ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        <nav
-          aria-label="Mobile"
-          className="container-page flex flex-col gap-1 py-4"
-        >
-          {MOBILE_NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-3 text-base font-medium text-brand-ink/80 hover:bg-brand-mist hover:text-brand-ink"
+      {mounted &&
+        createPortal(
+          <>
+            {open && (
+              <div
+                className="fixed inset-x-0 bottom-0 top-16 z-30 bg-brand-ink/40 backdrop-blur-sm lg:hidden"
+                onClick={() => setOpen(false)}
+                aria-hidden="true"
+              />
+            )}
+            <div
+              id="mobile-nav-panel"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation"
+              className={`fixed inset-x-0 top-16 z-40 origin-top border-b border-brand-ink/5 bg-white shadow-lg transition-transform duration-200 ease-out lg:hidden ${
+                open ? "translate-y-0" : "-translate-y-[120%]"
+              }`}
             >
-              {t(item.labelKey)}
-            </Link>
-          ))}
-        </nav>
-      </div>
+              <nav
+                aria-label="Mobile"
+                className="container-page flex flex-col gap-1 py-4"
+              >
+                {MOBILE_NAV_ITEMS.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="rounded-lg px-3 py-3 text-base font-medium text-brand-ink/80 hover:bg-brand-mist hover:text-brand-ink"
+                  >
+                    {t(item.labelKey)}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </>,
+          document.body,
+        )}
     </div>
   );
 }

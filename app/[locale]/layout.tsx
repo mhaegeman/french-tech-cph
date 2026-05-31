@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { routing } from "@/i18n/routing";
@@ -41,11 +41,12 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isKnownLocale(locale)) notFound();
   setRequestLocale(locale);
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>
       <body className="min-h-dvh bg-white antialiased">
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <a
             href="#main"
             className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-brand-ink focus:px-3 focus:py-2 focus:text-sm focus:text-white"
