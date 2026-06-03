@@ -26,7 +26,7 @@ export type FeaturedEvent = {
 export const FEATURED_EVENTS: FeaturedEvent[] = [
   {
     title: "Social Run × Tech: From Idea to Startup",
-    date: "Tuesday, June 17, 2026",
+    date: "Wednesday, June 17, 2026",
     time: "Departure 6:15 PM (GMT+2)",
     locationStart: "Forum metro station",
     locationEnd: "Melt restaurant",
