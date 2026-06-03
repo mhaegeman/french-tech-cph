@@ -5,59 +5,21 @@
     "description": "French Tech Copenhagen forbinder franske og danske stiftere, investorer, talenter og partnere gennem events, mentorordninger og blød landing for franske startups i Danmark."
   },
   "nav": {
-    "home": "Forside",
     "about": "Om os",
-    "community": "Fællesskab",
-    "startups": "Startups",
     "members": "Medlemmer",
-    "mentors": "Mentorer",
     "events": "Events",
-    "programs": "Programmer",
-    "resources": "Ressourcer",
-    "news": "Nyheder",
-    "partners": "Partnere",
-    "contact": "Kontakt",
-    "press": "Presse"
+    "contact": "Kontakt"
   },
   "home": {
     "heroEyebrow": "La French Tech · København",
     "heroCtaPrimary": "Bliv en del af fællesskabet",
     "heroCtaSecondary": "Næste event",
-    "statsTitle": "Et voksende fællesskab",
-    "stats": {
-      "members": "medlemmer",
-      "startups": "franske startups i DK",
-      "events": "events om året",
-      "partners": "partnere"
-    },
     "aboutTitle": "Hvorfor vi findes",
     "aboutBody": "French Tech Copenhagen er et frivilligt drevet fællesskab, der forbinder det franske og det danske tech-økosystem. Vi samler stiftere, ledere, investorer, mentorer og partnere for at skabe muligheder på begge sider af broen.",
     "aboutCta": "Læs mere",
     "upcomingTitle": "Kommende events",
     "upcomingBody": "Morgenmøder, paneler, stiftermiddage og større konferencer, drevet af Luma.",
     "upcomingCta": "Se alle events",
-    "verticalsTitle": "Fokusområder",
-    "verticals": {
-      "climate": {
-        "title": "Klima & Energi",
-        "body": "Vind, brint, energieffektivitet, bæredygtig mobilitet. Frankrig og Danmark deler en klima-tech-agenda."
-      },
-      "fintech": {
-        "title": "Fintech & Betalinger",
-        "body": "Open banking, betalinger, B2B SaaS til finans: en stærk fransk eksport og en stærk dansk appetit."
-      },
-      "health": {
-        "title": "Sundhed & Life Sciences",
-        "body": "Medtech, digital sundhed, biotech, broer til Medicon Valley."
-      }
-    },
-    "startupsTitle": "Udvalgte startups",
-    "startupsCta": "Se alle startups",
-    "partnersTitle": "Vores partnere",
-    "partnersBody": "Vi samarbejder med den franske ambassade i Danmark, Business France, det fransk-danske handelskammer og et voksende netværk af virksomheds- og økosystempartnere.",
-    "partnersCta": "Bliv partner",
-    "newsTitle": "Seneste nyheder",
-    "newsCta": "Alle nyheder",
     "newsletterTitle": "Hold dig opdateret",
     "newsletterBody": "Månedligt nyhedsbrev med events, muligheder, stifterhistorier.",
     "newsletterCta": "Tilmeld"
@@ -66,9 +28,5 @@
     "rights": "Alle rettigheder forbeholdes.",
     "tagline": "Bygget af fællesskabet, til fællesskabet.",
     "followLinkedIn": "Følg os på LinkedIn"
-  },
-  "labels": {
-    "comingSoon": "Kommer snart",
-    "placeholder": "Fuldt indhold kommer snart. Oversigt nedenfor."
   }
 }
