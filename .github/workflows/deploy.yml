@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    # Daily rebuild at 06:00 UTC so Airtable directories stay fresh.
-    - cron: "0 6 * * *"
 
 permissions:
   contents: read
@@ -38,8 +35,6 @@ jobs:
       - name: Build
         env:
           NEXT_PUBLIC_SITE_URL: https://frenchtechcopenhagen.com
-          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
-          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
           NEXT_PUBLIC_LUMA_CALENDAR_URL: ${{ vars.NEXT_PUBLIC_LUMA_CALENDAR_URL }}
           NEXT_PUBLIC_CONTACT_FORM_URL: ${{ vars.NEXT_PUBLIC_CONTACT_FORM_URL }}
           NEXT_PUBLIC_NEWSLETTER_FORM_URL: ${{ vars.NEXT_PUBLIC_NEWSLETTER_FORM_URL }}

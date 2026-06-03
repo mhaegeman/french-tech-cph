@@ -15,11 +15,6 @@ const nextConfig: NextConfig = {
   assetPrefix: basePath,
   images: {
     unoptimized: true,
-    remotePatterns: [
-      { protocol: "https", hostname: "cdn.sanity.io" },
-      { protocol: "https", hostname: "v5.airtableusercontent.com" },
-      { protocol: "https", hostname: "dl.airtable.com" },
-    ],
   },
 };
 
