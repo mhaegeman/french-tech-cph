@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { FEATURED_EVENTS } from "@/lib/events";
+import { FeaturedEventCard } from "@/components/sections/FeaturedEventCard";
 
 const LUMA_CALENDAR_EMBED_URL = process.env.NEXT_PUBLIC_LUMA_CALENDAR_URL;
 
@@ -22,6 +24,14 @@ export function UpcomingEvents() {
             {t("upcomingCta")} →
           </Link>
         </div>
+
+        {FEATURED_EVENTS.length > 0 && (
+          <div className="mt-10 space-y-6">
+            {FEATURED_EVENTS.map((e) => (
+              <FeaturedEventCard key={e.title} event={e} />
+            ))}
+          </div>
+        )}
 
         <div className="mt-10 overflow-hidden rounded-2xl border border-brand-ink/5 bg-white shadow-sm">
           {LUMA_CALENDAR_EMBED_URL ? (

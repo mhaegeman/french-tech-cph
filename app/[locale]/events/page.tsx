@@ -2,7 +2,8 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageShell } from "@/components/layout/PageShell";
 import { Link } from "@/i18n/navigation";
 import { pageAlternates } from "@/lib/seo";
-import { PAST_EVENTS } from "@/lib/events";
+import { FEATURED_EVENTS, PAST_EVENTS } from "@/lib/events";
+import { FeaturedEventCard } from "@/components/sections/FeaturedEventCard";
 import type { Metadata } from "next";
 
 const LUMA = process.env.NEXT_PUBLIC_LUMA_CALENDAR_URL;
@@ -34,6 +35,19 @@ export default async function EventsPage({
       title={t("events")}
       intro="Breakfasts, panels, founder dinners and meet-ups for the French and Danish tech communities."
     >
+      {FEATURED_EVENTS.length > 0 && (
+        <section className="mb-16">
+          <h2 className="font-display text-2xl font-semibold text-brand-ink">
+            Next up
+          </h2>
+          <div className="mt-6 space-y-6">
+            {FEATURED_EVENTS.map((e) => (
+              <FeaturedEventCard key={e.title} event={e} />
+            ))}
+          </div>
+        </section>
+      )}
+
       <section>
         <h2 className="font-display text-2xl font-semibold text-brand-ink">
           Upcoming
