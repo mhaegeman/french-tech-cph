@@ -18,17 +18,35 @@ export async function generateMetadata({
   };
 }
 
+function initials(name: string) {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
+}
+
 function MemberCard({ member }: { member: TeamMember }) {
   return (
     <li className="overflow-hidden rounded-2xl border border-brand-ink/5 bg-white shadow-sm">
       <div className="relative aspect-square w-full bg-brand-mist">
-        <Image
-          src={member.photo}
-          alt={member.name}
-          fill
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover"
-        />
+        {member.photo ? (
+          <Image
+            src={member.photo}
+            alt={member.name}
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            className="object-cover"
+          />
+        ) : (
+          <div
+            aria-hidden="true"
+            className="flex h-full w-full items-center justify-center font-display text-4xl font-semibold text-brand-ink/40"
+          >
+            {initials(member.name)}
+          </div>
+        )}
       </div>
       <div className="p-4">
         <p className="font-display text-lg font-semibold text-brand-ink">

@@ -2,7 +2,8 @@ export type TeamMember = {
   name: string;
   role: string;
   title: string;
-  photo: string;
+  /** Optional photo path under /public. Falls back to an initials avatar when absent. */
+  photo?: string;
   /** Optional LinkedIn profile URL, shown under the name and role. */
   linkedin?: string;
 };
@@ -98,5 +99,23 @@ export const AMBASSADORS: TeamMember[] = [
     role: "Ambassador",
     title: "Sports lead",
     photo: "/team/nicolas-chabauty.png",
+  },
+  {
+    name: "Lena Djemili",
+    role: "Ambassador",
+    title: "Ethics & Compliance lead",
+    linkedin: "https://www.linkedin.com/in/lenalydia",
+  },
+  {
+    name: "Eline Sekerger",
+    role: "Ambassador",
+    title: "Product design lead",
+    linkedin: "https://www.linkedin.com/in/eline-sekerger",
+  },
+  {
+    name: "Isabelle Faggianelli",
+    role: "Ambassador",
+    title: "Brand lead",
+    linkedin: "https://www.linkedin.com/in/isabelle-faggianelli-445b5490",
   },
 ];
