@@ -13,7 +13,7 @@ export function Header() {
   const t = useTranslations("nav");
   const tSite = useTranslations("site");
   return (
-    <header className="pt-safe sticky top-0 z-40 border-b border-brand-ink/5 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-brand-ink/5 bg-white/80 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between gap-2 sm:gap-3 lg:gap-6">
         <Link
           href="/"
