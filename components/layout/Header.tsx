@@ -13,11 +13,11 @@ export function Header() {
   const t = useTranslations("nav");
   const tSite = useTranslations("site");
   return (
-    <header className="sticky top-0 z-40 border-b border-brand-ink/5 bg-white/80 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between gap-3 lg:gap-6">
+    <header className="pt-safe sticky top-0 z-40 border-b border-brand-ink/5 bg-white/80 backdrop-blur">
+      <div className="container-page flex h-16 items-center justify-between gap-2 sm:gap-3 lg:gap-6">
         <Link
           href="/"
-          className="flex items-center whitespace-nowrap font-display text-sm font-bold tracking-tight text-brand-ink sm:text-base lg:text-lg"
+          className="flex min-w-0 items-center truncate font-display text-sm font-bold tracking-tight text-brand-ink sm:text-base lg:text-lg"
           aria-label={tSite("name")}
         >
           French Tech&nbsp;<span className="text-brand-red">Copenhagen</span>
@@ -36,7 +36,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <a
             href="https://www.linkedin.com/company/frenchtechcopenhagen/"
             target="_blank"

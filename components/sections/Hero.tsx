@@ -2,6 +2,9 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
 
+const JOIN_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScXG_985S89yiKCTdfeBa5y19ps74QwEO5tAS8KCnNbUl9-CA/viewform";
+
 export function Hero() {
   const t = useTranslations("home");
   const tSite = useTranslations("site");
@@ -31,9 +34,14 @@ export function Hero() {
             {tSite("description")}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact" className="btn-primary">
+            <a
+              href={JOIN_FORM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
               {t("heroCtaPrimary")}
-            </Link>
+            </a>
             <Link href="/events" className="btn-secondary">
               {t("heroCtaSecondary")} →
             </Link>
