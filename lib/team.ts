@@ -3,6 +3,8 @@ export type TeamMember = {
   role: string;
   title: string;
   photo: string;
+  /** Optional LinkedIn profile URL, shown under the name and role. */
+  linkedin?: string;
 };
 
 /**

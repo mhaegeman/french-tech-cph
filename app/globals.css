@@ -19,6 +19,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+@layer utilities {
+  /* Keep the sticky header clear of the iOS status bar / notch so its
+     contents are never clipped on mobile. */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
 @layer components {
   .container-page {
     @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
