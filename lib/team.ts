@@ -112,6 +112,7 @@ export const AMBASSADORS: TeamMember[] = [
     role: "Ambassador",
     title: "Sports lead",
     photo: "/team/nicolas-chabauty.png",
+    linkedin: "https://www.linkedin.com/in/nicolas-chabauty-586a51140",
   },
   {
     name: "Lena Djemili",
