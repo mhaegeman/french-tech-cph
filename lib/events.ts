@@ -3,6 +3,12 @@ export type PastEvent = {
   date: string;
   time?: string;
   url: string;
+  /**
+   * Optional invitation image for the event, shown on the Past events card.
+   * Place files under /public/events and reference them as
+   * "/events/<file>.png". Falls back to a text-only card when absent.
+   */
+  image?: string;
 };
 
 export type EventLink = {
