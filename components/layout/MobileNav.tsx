@@ -91,8 +91,10 @@ export function MobileNav() {
               role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation"
-              className={`fixed inset-x-0 top-16 z-40 origin-top border-b border-brand-ink/5 bg-white shadow-lg transition-transform duration-200 ease-out lg:hidden ${
-                open ? "translate-y-0" : "-translate-y-[120%]"
+              className={`fixed inset-x-0 top-16 z-40 origin-top border-b border-brand-ink/5 bg-white shadow-lg transition-all duration-200 ease-out lg:hidden ${
+                open
+                  ? "translate-y-0 opacity-100"
+                  : "pointer-events-none invisible -translate-y-[120%] opacity-0"
               }`}
             >
               <nav
