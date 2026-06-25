@@ -31,10 +31,22 @@ export type FeaturedEvent = {
 
 // Upcoming events shown in the "Next up" section. Keep only events whose date
 // is in the future; once an event has passed, move it down to PAST_EVENTS.
-//
-// TODO: add the September 17, 2026 event here once its public Luma URL and
-// details (title, time, location, description, invitation image) are available.
-export const FEATURED_EVENTS: FeaturedEvent[] = [];
+export const FEATURED_EVENTS: FeaturedEvent[] = [
+  {
+    title: "“Back to Tech” — French Tech Networking",
+    date: "Thursday, September 17, 2026",
+    time: "5:30 PM – 11:00 PM GMT+2",
+    description:
+      "Welcome back from the holidays! Join French Tech Copenhagen for an evening where you'll first learn from experts, debate in small groups on a specific topic (e.g. Claude Code, AI Compliance & Ethics, Product Design…), and of course share a drink and dinner with the whole community.",
+    links: [
+      {
+        label: "Register on Luma",
+        url: "https://luma.com/dx9r6pnk",
+        primary: true,
+      },
+    ],
+  },
+];
 
 // Past events, most recent first.
 export const PAST_EVENTS: PastEvent[] = [
