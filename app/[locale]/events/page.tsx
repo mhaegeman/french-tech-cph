@@ -1,7 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { PageShell } from "@/components/layout/PageShell";
-import { Link } from "@/i18n/navigation";
 import { pageAlternates } from "@/lib/seo";
 import { FEATURED_EVENTS, PAST_EVENTS } from "@/lib/events";
 import { FeaturedEventCard } from "@/components/sections/FeaturedEventCard";
@@ -49,31 +48,21 @@ export default async function EventsPage({
         </section>
       )}
 
-      <section>
-        <h2 className="font-display text-2xl font-semibold text-brand-ink">
-          Upcoming
-        </h2>
-        <div className="mt-6 overflow-hidden rounded-2xl border border-brand-ink/5 bg-white shadow-sm">
-          {LUMA ? (
+      {LUMA && (
+        <section>
+          <h2 className="font-display text-2xl font-semibold text-brand-ink">
+            Upcoming
+          </h2>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-brand-ink/5 bg-white shadow-sm">
             <iframe
               src={LUMA}
               title="Events calendar"
               className="h-[720px] w-full"
               loading="lazy"
             />
-          ) : (
-            <div className="flex flex-col items-center justify-center gap-4 px-6 py-16 text-center">
-              <p className="max-w-md text-brand-ink/70">
-                No upcoming events scheduled yet. Drop us a line if you&apos;d
-                like to be first to hear about the next one.
-              </p>
-              <Link href="/contact" className="btn-primary">
-                Get notified
-              </Link>
-            </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {PAST_EVENTS.length > 0 && (
         <section className="mt-16">
