@@ -1,8 +1,6 @@
 import { useTranslations } from "next-intl";
 
 const FORM_URL = process.env.NEXT_PUBLIC_NEWSLETTER_FORM_URL;
-const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "frenchtechcopenhagen@gmail.com";
 
 export function NewsletterCTA() {
   const t = useTranslations("home");
@@ -44,12 +42,13 @@ export function NewsletterCTA() {
             </form>
           ) : (
             <div className="flex justify-start md:justify-end">
-              <a
-                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Newsletter signup")}`}
-                className="rounded-full bg-brand-red px-5 py-3 text-sm font-semibold text-white hover:bg-red-700"
-              >
-                {t("newsletterCta")} →
-              </a>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/60">
+                <span
+                  className="h-2 w-2 rounded-full bg-brand-red"
+                  aria-hidden="true"
+                />
+                {t("newsletterComingSoon")}
+              </span>
             </div>
           )}
         </div>

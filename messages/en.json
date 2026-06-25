@@ -23,7 +23,8 @@
     "upcomingCta": "See all events",
     "newsletterTitle": "Stay in the loop",
     "newsletterBody": "Monthly newsletter with events, opportunities, founder stories.",
-    "newsletterCta": "Subscribe"
+    "newsletterCta": "Subscribe",
+    "newsletterComingSoon": "Coming soon"
   },
   "footer": {
     "rights": "All rights reserved.",
