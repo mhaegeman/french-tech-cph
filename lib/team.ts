@@ -118,18 +118,21 @@ export const AMBASSADORS: TeamMember[] = [
     name: "Lena Djemili",
     role: "Ambassador",
     title: "Ethics & Compliance lead",
+    photo: "/team/lena-djemili.png",
     linkedin: "https://www.linkedin.com/in/lenalydia",
   },
   {
     name: "Eline Sekerger",
     role: "Ambassador",
     title: "Product design lead",
+    photo: "/team/eline-sekerger.png",
     linkedin: "https://www.linkedin.com/in/eline-sekerger",
   },
   {
     name: "Isabelle Faggianelli",
     role: "Ambassador",
     title: "Brand lead",
+    photo: "/team/isabelle-faggianelli.png",
     linkedin: "https://www.linkedin.com/in/isabelle-faggianelli-445b5490",
   },
 ];
