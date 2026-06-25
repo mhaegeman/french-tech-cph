@@ -1,4 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import Image from "next/image";
 import { PageShell } from "@/components/layout/PageShell";
 import { Link } from "@/i18n/navigation";
 import { pageAlternates } from "@/lib/seo";
@@ -79,27 +80,46 @@ export default async function EventsPage({
           <h2 className="font-display text-2xl font-semibold text-brand-ink">
             Past events
           </h2>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {PAST_EVENTS.map((e) => (
               <li
                 key={e.url}
-                className="flex flex-col rounded-2xl border border-brand-ink/5 bg-white p-6 shadow-sm"
+                className="flex flex-col overflow-hidden rounded-2xl border border-brand-ink/5 bg-white shadow-sm"
               >
-                <p className="font-display text-lg font-semibold text-brand-ink">
-                  {e.title}
-                </p>
-                <p className="mt-2 text-sm text-brand-ink/70">{e.date}</p>
-                {e.time && (
-                  <p className="text-sm text-brand-ink/60">{e.time}</p>
+                {e.image && (
+                  <a
+                    href={e.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${e.title} on Luma`}
+                    className="relative block aspect-[4/3] w-full overflow-hidden bg-brand-mist"
+                  >
+                    <Image
+                      src={e.image}
+                      alt={`${e.title} invitation`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                    />
+                  </a>
                 )}
-                <a
-                  href={e.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex text-sm font-semibold text-brand-red hover:underline"
-                >
-                  View on Luma →
-                </a>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="font-display text-lg font-semibold text-brand-ink">
+                    {e.title}
+                  </p>
+                  <p className="mt-2 text-sm text-brand-ink/70">{e.date}</p>
+                  {e.time && (
+                    <p className="text-sm text-brand-ink/60">{e.time}</p>
+                  )}
+                  <a
+                    href={e.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex text-sm font-semibold text-brand-red hover:underline"
+                  >
+                    View on Luma →
+                  </a>
+                </div>
               </li>
             ))}
           </ul>

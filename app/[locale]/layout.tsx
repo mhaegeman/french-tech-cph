@@ -1,7 +1,7 @@
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -12,6 +12,12 @@ const SITE_URL =
   "https://frenchtechcopenhagen.com";
 
 const OG_LOCALES: Record<string, string> = { en: "en_US", da: "da_DK" };
+
+// Match the white site header so iOS Safari tints its toolbar white instead of
+// rendering a grey bar above the header.
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

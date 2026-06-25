@@ -3,6 +3,12 @@ export type PastEvent = {
   date: string;
   time?: string;
   url: string;
+  /**
+   * Optional invitation image for the event, shown on the Past events card.
+   * Place files under /public/events and reference them as
+   * "/events/<file>.png". Falls back to a text-only card when absent.
+   */
+  image?: string;
 };
 
 export type EventLink = {
@@ -23,37 +29,21 @@ export type FeaturedEvent = {
   links: EventLink[];
 };
 
-export const FEATURED_EVENTS: FeaturedEvent[] = [
+// Upcoming events shown in the "Next up" section. Keep only events whose date
+// is in the future; once an event has passed, move it down to PAST_EVENTS.
+//
+// TODO: add the September 17, 2026 event here once its public Luma URL and
+// details (title, time, location, description, invitation image) are available.
+export const FEATURED_EVENTS: FeaturedEvent[] = [];
+
+// Past events, most recent first.
+export const PAST_EVENTS: PastEvent[] = [
   {
     title: "Social Run × Tech: From Idea to Startup",
     date: "Wednesday, June 17, 2026",
-    time: "Departure 6:15 PM (GMT+2)",
-    locationStart: "Forum metro station",
-    locationEnd: "Melt restaurant",
-    description:
-      "A one-of-a-kind evening mixing sport, tech and entrepreneurship. We move together, we connect, and we finish around a drink. Test RACE2BE, a brand-new social running app built for the event — with a free half-pint waiting for participants at the finish. No need to be a runner: you can also join on foot, at your own pace. The only thing that matters is being there. On arrival, we sit down for a talk on a subject close to our hearts — \"How do you turn an original idea into a company?\" — and share our experiences, mistakes and lessons learned, from the first spark to validating the concept and the early steps of building a company.",
-    audience: [
-      "Aspiring entrepreneurs",
-      "Project owners",
-      "Anyone curious about innovation and tech",
-      "Runners and walkers who love good conversations",
-    ],
-    links: [
-      {
-        label: "Register for the talk (Luma)",
-        url: "https://luma.com/au6alddz",
-        primary: true,
-      },
-      {
-        label: "Join the run (RACE2BE)",
-        url: "https://app.race2be.com/events/cmps4wxf00001xn64gyav4cqi",
-        note: "Includes a free half-pint — limited to 30 spots",
-      },
-    ],
+    time: "6:15 PM GMT+2",
+    url: "https://luma.com/au6alddz",
   },
-];
-
-export const PAST_EVENTS: PastEvent[] = [
   {
     title: "Claude Demo Followed By Roundtables And Networking",
     date: "Wednesday, May 20, 2026",
