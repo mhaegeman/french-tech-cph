@@ -39,8 +39,6 @@ jobs:
           NEXT_PUBLIC_CONTACT_FORM_URL: ${{ vars.NEXT_PUBLIC_CONTACT_FORM_URL }}
           NEXT_PUBLIC_NEWSLETTER_FORM_URL: ${{ vars.NEXT_PUBLIC_NEWSLETTER_FORM_URL }}
           NEXT_PUBLIC_CONTACT_EMAIL: ${{ vars.NEXT_PUBLIC_CONTACT_EMAIL }}
-          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
-          BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
         run: npm run build
 
       - name: Upload Pages artifact

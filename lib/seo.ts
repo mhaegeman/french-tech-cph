@@ -55,25 +55,6 @@ export function organizationJsonLd({
 }
 
 /**
- * Search-engine ownership verification meta tags, wired from build-time env.
- *
- * Add the codes from Google Search Console / Bing Webmaster Tools as repo
- * Actions variables (GOOGLE_SITE_VERIFICATION / BING_SITE_VERIFICATION) and
- * they get emitted into <head>. Returns `undefined` when none are set so we
- * don't render empty tags.
- */
-export function siteVerification(): Metadata["verification"] | undefined {
-  const google = process.env.GOOGLE_SITE_VERIFICATION;
-  const bing = process.env.BING_SITE_VERIFICATION;
-  if (!google && !bing) return undefined;
-
-  const verification: NonNullable<Metadata["verification"]> = {};
-  if (google) verification.google = google;
-  if (bing) verification.other = { "msvalidate.01": bing };
-  return verification;
-}
-
-/**
  * Build per-page `alternates` for canonical + hreflang.
  *
  * The locale layout intentionally does NOT set `alternates`, because Next.js

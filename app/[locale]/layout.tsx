@@ -5,7 +5,7 @@ import type { Metadata, Viewport } from "next";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { SITE_URL, organizationJsonLd, siteVerification } from "@/lib/seo";
+import { SITE_URL, organizationJsonLd } from "@/lib/seo";
 import "../globals.css";
 
 const OG_LOCALES: Record<string, string> = { en: "en_US", da: "da_DK" };
@@ -49,7 +49,6 @@ export async function generateMetadata({
       description,
       images: ["/og.png"],
     },
-    verification: siteVerification(),
     // No `alternates` here on purpose: it would be inherited by every nested
     // page and emit the locale-home URL as their canonical. Each page builds
     // its own alternates via `pageAlternates()` in lib/seo.ts.
