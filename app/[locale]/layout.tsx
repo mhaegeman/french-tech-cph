@@ -5,11 +5,8 @@ import type { Metadata, Viewport } from "next";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SITE_URL, organizationJsonLd } from "@/lib/seo";
 import "../globals.css";
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://frenchtechcopenhagen.com";
 
 const OG_LOCALES: Record<string, string> = { en: "en_US", da: "da_DK" };
 
@@ -69,9 +66,21 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
 
+  const t = await getTranslations({ locale, namespace: "site" });
+  const orgJsonLd = organizationJsonLd({
+    name: t("name"),
+    description: t("description"),
+  });
+
   return (
     <html lang={locale}>
       <body className="min-h-dvh bg-white antialiased">
+        {/* Schema.org Organization markup: helps search engines treat the site
+            as the entity people mean when they search the association name. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         {/* next-intl v4: the provider inherits messages from the request
             config, so they no longer need to be passed explicitly. */}
         <NextIntlClientProvider locale={locale}>
