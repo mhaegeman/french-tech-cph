@@ -17,7 +17,7 @@ export const BOARD: TeamMember[] = [
     name: "Delphine Guesnon",
     role: "Founder & President",
     title: "Commercial transformation lead",
-    photo: "/team/delphine-guesnon.jpg",
+    photo: "/team/delphine-guesnon.png",
     linkedin: "https://www.linkedin.com/in/delphine-guesnon-342a971",
   },
   {
