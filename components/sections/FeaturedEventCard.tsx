@@ -46,7 +46,8 @@ export function FeaturedEventCard({ event }: { event: FeaturedEvent }) {
                 <dt className="font-semibold text-brand-ink">Where</dt>
                 {event.locationStart && (
                   <dd className="text-brand-ink/70">
-                    Start: {event.locationStart}
+                    {event.locationEnd ? "Start: " : ""}
+                    {event.locationStart}
                   </dd>
                 )}
                 {event.locationEnd && (
