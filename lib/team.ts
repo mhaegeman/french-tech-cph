@@ -101,13 +101,6 @@ export const AMBASSADORS: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/hugo-berthelot",
   },
   {
-    name: "Maxime Haegeman",
-    role: "Ambassador",
-    title: "AI lead",
-    photo: "/team/maxime-haegeman.png",
-    linkedin: "https://www.linkedin.com/in/maxime-haegeman",
-  },
-  {
     name: "Nicolas Chabauty",
     role: "Ambassador",
     title: "Sports lead",
